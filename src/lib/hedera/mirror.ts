@@ -121,7 +121,7 @@ export class HederaMirrorNode {
       const url = `${this.baseUrl}/api/v1/topics/${topicId}/messages?${params.toString()}`;
       const response: AxiosResponse<MirrorNodeResponse> = await axios.get(url);
       
-      return response.messages;
+      return response.data.messages;
     } catch (error) {
       console.error('Error fetching messages in range:', error);
       throw error;
