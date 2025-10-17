@@ -3,7 +3,7 @@ import { HederaMirrorNode } from './mirror';
 import { HederaConfig, SupplyChainEvent, ProductBatch, HederaTransaction, HederaTokenInfo, EventType, ParticipantType } from '@/types';
 
 export class HederaService {
-  private client: HederaClient;
+  private client: HederaClient | null = null;
   private mirrorNode: HederaMirrorNode;
   private config: HederaConfig;
   private topicId: string | null = null;
