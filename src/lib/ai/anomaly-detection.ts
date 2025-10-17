@@ -59,7 +59,7 @@ export class AnomalyDetectionSystem {
       anomalies.push(...locationAnomalies);
 
       // Certification anomaly detection
-      const certificationAnomalies = this.detectCertificationAnomalies(event, previousEvents);
+      const certificationAnomalies = this.detectCertificationAnomalies(event);
       anomalies.push(...certificationAnomalies);
 
       return anomalies;
@@ -245,8 +245,7 @@ export class AnomalyDetectionSystem {
    * Detect certification anomalies
    */
   private detectCertificationAnomalies(
-    event: SupplyChainEvent,
-    _previousEvents: SupplyChainEvent[]
+    event: SupplyChainEvent
   ): AnomalyAlert[] {
     const anomalies: AnomalyAlert[] = [];
 

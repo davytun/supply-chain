@@ -14,8 +14,7 @@ import {
   Users,
   FileText,
   LogOut,
-  Menu,
-  X
+  Menu
 } from 'lucide-react';
 
 interface LayoutProps {

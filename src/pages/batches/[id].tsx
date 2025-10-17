@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Layout from '@/components/Layout';
 import { ProductBatch } from '@/types';
-import { Package, MapPin, Calendar, Award, QrCode } from 'lucide-react';
+import { Package, MapPin, QrCode } from 'lucide-react';
 
 const BatchDetail: React.FC = () => {
   const router = useRouter();
@@ -16,7 +16,7 @@ const BatchDetail: React.FC = () => {
       const mockBatch: ProductBatch = {
         id: id as string,
         productName: 'Sample Product',
-        productType: 'coffee' as any,
+        productType: 'coffee',
         quantity: 100,
         unit: 'kg',
         createdAt: new Date().toISOString(),
@@ -25,7 +25,7 @@ const BatchDetail: React.FC = () => {
           region: 'Sidamo',
           city: 'Yirgacheffe'
         },
-        currentStatus: 'in_production' as any,
+        currentStatus: 'in_production',
         qrCode: '',
         events: [],
         certifications: [],
@@ -55,7 +55,7 @@ const BatchDetail: React.FC = () => {
           <Package className="mx-auto h-12 w-12 text-gray-400" />
           <h3 className="mt-2 text-sm font-medium text-gray-900">Batch not found</h3>
           <p className="mt-1 text-sm text-gray-500">
-            The batch you're looking for doesn't exist.
+            The batch you&apos;re looking for doesn&apos;t exist.
           </p>
           <div className="mt-6">
             <button
