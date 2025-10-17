@@ -112,12 +112,11 @@ export class HederaMirrorNode {
     limit: number = 100
   ): Promise<MirrorNodeMessage[]> {
     try {
-      const params = new URLSearchParams({
-        'timestamp': `gte:${startTimestamp}`,
-        'timestamp': `lte:${endTimestamp}`,
-        'limit': limit.toString(),
-        'order': 'asc'
-      });
+      const params = new URLSearchParams();
+      params.append('timestamp', `gte:${startTimestamp}`);
+      params.append('timestamp', `lte:${endTimestamp}`);
+      params.append('limit', limit.toString());
+      params.append('order', 'asc');
 
       const url = `${this.baseUrl}/api/v1/topics/${topicId}/messages?${params.toString()}`;
       const response: AxiosResponse<MirrorNodeResponse> = await axios.get(url);
