@@ -441,7 +441,7 @@ export class AnomalyDetectionSystem {
 
   private isReasonableCountryTransition(fromCountry: string, toCountry: string): boolean {
     // Simplified logic - in production, you'd have a comprehensive database
-    const tradeRoutes = {
+    const tradeRoutes: Record<string, string[]> = {
       'Brazil': ['USA', 'Germany', 'Netherlands', 'Japan'],
       'Colombia': ['USA', 'Germany', 'Netherlands', 'Japan'],
       'Ethiopia': ['USA', 'Germany', 'Italy', 'Japan'],
