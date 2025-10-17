@@ -10,31 +10,31 @@ export class HederaClient {
     throw new Error('Hedera integration disabled for production build');
   }
 
-  async createTopic(memo?: string): Promise<string> {
+  async createTopic(): Promise<string> {
     throw new Error('Hedera integration disabled');
   }
 
-  async submitMessage(topicId: string, message: string): Promise<HederaTransaction> {
+  async submitMessage(): Promise<HederaTransaction> {
     throw new Error('Hedera integration disabled');
   }
 
-  async getTopicInfo(topicId: string) {
+  async getTopicInfo() {
     throw new Error('Hedera integration disabled');
   }
 
-  async createToken(name: string, symbol: string, decimals: number, initialSupply: number): Promise<HederaTokenInfo> {
+  async createToken(): Promise<HederaTokenInfo> {
     throw new Error('Hedera integration disabled');
   }
 
-  async createNftToken(name: string, symbol: string): Promise<HederaTokenInfo> {
+  async createNftToken(): Promise<HederaTokenInfo> {
     throw new Error('Hedera integration disabled');
   }
 
-  async transferTokens(tokenId: string, fromAccountId: string, toAccountId: string, amount: number): Promise<string> {
+  async transferTokens(): Promise<string> {
     throw new Error('Hedera integration disabled');
   }
 
-  async getAccountBalance(accountId: string): Promise<any> {
+  async getAccountBalance(): Promise<unknown> {
     throw new Error('Hedera integration disabled');
   }
 
@@ -42,7 +42,7 @@ export class HederaClient {
     // No-op
   }
 
-  getClient(): any {
+  getClient(): unknown {
     throw new Error('Hedera integration disabled');
   }
 
